@@ -12,31 +12,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. */
 function onClick() {
-  if (inputsAreEmpty()) {
-    label.textContent = 'Error: one or both inputs are empty.';
-    return;
-  }
-  updateLabel();
+    if (inputsAreEmpty()) {
+        label.textContent = 'Error: one or both inputs are empty.';
+        return;
+    }
+    updateLabel();
 }
+
 function inputsAreEmpty() {
-  if (getNumber1() === '' || getNumber2() === '') {
-    return true;
-  } else {
-    return false;
-  }
+    if (getNumber1() === '' || getNumber2() === '') {
+        return true;
+    } else {
+        return false;
+    }
 }
+
 function updateLabel() {
-  var addend1 = getNumber1();
-  var addend2 = getNumber2();
-  var sum=addend1+addend2;// below the solution
-  /* var sum = parseInt(addend1)+parseInt(addend2); */
-  label.textContent = addend1 + ' + ' + addend2 + ' = ' + sum;
+    var addend1 = getNumber1();
+    var addend2 = getNumber2();
+    var sum = addend1 + addend2; // below the solution. just uncomment the below line and comment out the current line
+    /* var sum = parseInt(addend1)+parseInt(addend2); */
+    label.textContent = addend1 + ' + ' + addend2 + ' = ' + sum;
 }
+
 function getNumber1() {
-  return inputs[0].value;
+    return inputs[0].value;
 }
+
 function getNumber2() {
-  return inputs[1].value;
+    return inputs[1].value;
 }
 var inputs = document.querySelectorAll('input');
 var label = document.querySelector('p');
